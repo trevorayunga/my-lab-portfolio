@@ -3,8 +3,8 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  // Set to "/<repo-name>/" if deploying to GitHub Pages
-  base: "./",
+  
+  base: "/my-lab-portfolio/",
   test: {
     globals: true,
     environment: "jsdom",
