@@ -1,4 +1,4 @@
-// Replace the placeholder links (example.com) with your live demo / GitHub URLs.
+
 export const initialProjects = [
   {
     id: 1,

@@ -1,15 +1,15 @@
 :root {
-  /* Turquoise palette */
-  --bg: #2ec4b6;            /* page background: turquoise */
-  --bg-deep: #1a9e92;       /* deeper turquoise for gradients */
-  --surface: #e8fffb;       /* cards, inputs */
+  
+  --bg: #2ec4b6;           
+  --bg-deep: #1a9e92;       
+  --surface: #e8fffb;       
   --header-bg: rgba(46, 196, 182, 0.88);
-  --text: #072a2e;          /* deep teal-navy text */
+  --text: #072a2e;          
   --muted: #2f5f64;
   --border: #8fe0d6;
-  --accent: #0b5c63;        /* deep teal: buttons, focus */
+  --accent: #0b5c63;        
   --accent-contrast: #ffffff;
-  --accent-2: #e8503a;      /* coral: links, highlights */
+  --accent-2: #e8503a;      
   --badge-bg: rgba(11, 92, 99, 0.14);
   --badge-text: #0b5c63;
   --error: #c62828;

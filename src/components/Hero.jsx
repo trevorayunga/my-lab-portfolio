@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-// Photo lives in the public folder. encodeURIComponent handles the spaces in the filename.
+
 const PHOTO_FILE = "WhatsApp Image 2026-11-15 at 07.04.03.jpeg";
 const PHOTO = `${import.meta.env.BASE_URL}${encodeURIComponent(PHOTO_FILE)}`;
 

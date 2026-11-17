@@ -1,5 +1,7 @@
-import { useReducer, useMemo, useState } from "react";
+import { useReducer, useMemo, useState, useEffect } from "react";
 import { initialProjects } from "../data/initialProjects";
+
+const STORAGE_KEY = "portfolio-projects";
 
 function projectsReducer(state, action) {
   switch (action.type) {
@@ -12,13 +14,29 @@ function projectsReducer(state, action) {
   }
 }
 
-/**
- * Centralised state for the portfolio: the project list and the search query.
- * Lives in <App/>, the nearest common parent of every component that needs it.
- */
+
+function loadProjects(seed) {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved ? JSON.parse(saved) : seed;
+  } catch {
+    return seed;
+  }
+}
+
+
 export default function useProjects(seed = initialProjects) {
-  const [projects, dispatch] = useReducer(projectsReducer, seed);
+  const [projects, dispatch] = useReducer(projectsReducer, seed, loadProjects);
   const [query, setQuery] = useState("");
+
+  
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+    } catch {
+      
+    }
+  }, [projects]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
